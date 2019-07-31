@@ -29,7 +29,7 @@ export default function Navbar(props) {
                         <Link to = "/">Home</Link>
                     </li>
                     <li>
-                        <Link to = "/room">Rooms</Link>
+                        <Link to = "/rooms">Rooms</Link>
                     </li>
                 </ul>
             </div>
