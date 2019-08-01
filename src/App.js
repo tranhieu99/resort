@@ -4,9 +4,9 @@ import Navbar from './components/Navbar'
 import Home from './page/Home'
 import Room from './page/Room'
 import SingleRoom from './page/SingleRoom'
-import { FaAlignJustify } from "react-icons/fa";
+import Error from './page/Error'
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   render() { 
@@ -14,9 +14,13 @@ class App extends React.Component {
       <Router>
       <div>
         <Navbar />
+        <Switch>
         <Route path = "/" exact component ={Home} />
-        <Route path = "/room" exact component ={Room} />
-        <Route path = "/single-room" exact component ={SingleRoom} />
+        <Route path = "/rooms" exact component ={Room} />
+        <Route path = "/rooms/:slug" exact component ={SingleRoom} />
+        <Route component = {Error} />
+        </Switch>
+        
       </div>
       </Router>
      );

@@ -15,7 +15,7 @@ export default function Navbar(props) {
         <nav className = "__navbar ">
             <div className="baongoai __navbar-wrapper">
                 <div className = "__navbar-logo-humburger">  
-                <div className="logo"> <img src = {Logo} /> </div>
+                <div className="logo"> <Link to = "/"><img src = {Logo} />  </Link></div>
                     <button className= 'humburger' onClick = {onHumburgerClick}>
                         <FaAlignJustify /> 
                      </button>
