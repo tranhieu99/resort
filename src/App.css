@@ -135,10 +135,11 @@ display: none;
     min-height: 60vh;
 }
 .banner {
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
     background: rgba(0,0,0,0.5);
     display: inline-block;
     text-align: center;
+    letter-spacing: .2rem;
 }
 .btn-primary {
     color: black;
@@ -163,7 +164,7 @@ display: none;
 
 .divider {
     height: 5px;
-    width: 50%;
+    width: 13rem;
     background: var(--primary-color);
     margin: .6rem auto;
 }
@@ -175,4 +176,46 @@ display: none;
     text-align: center;
     margin: 2rem 0px;
     text-transform: capitalize;
+}
+.section-title {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.__services {
+    padding: 2rem;
+    background: var(--main-bg-color);
+}
+.__services-some {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.__services-service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 19px;
+    text-align: justify;
+}
+
+.__services-service h6 {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.__services-service span {
+    font-size: 35px;
+    color: var(--primary-color);
+}
+
+.baongoai.__services-some {
+    margin-top: 40px;
+}
+
+.__services-service p {
+    margin-top: 14px;
+    color: #313131;
 }
