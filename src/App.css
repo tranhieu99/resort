@@ -181,6 +181,7 @@ display: none;
     text-align: center;
     text-transform: capitalize;
     font-size: 20px;
+    margin: 30px 0px;
 }
 .__services {
     padding: 2rem;
@@ -211,11 +212,75 @@ display: none;
     color: var(--primary-color);
 }
 
-.baongoai.__services-some {
-    margin-top: 40px;
-}
-
 .__services-service p {
     margin-top: 14px;
     color: #313131;
+}
+
+.Loading {
+    position:relative;
+}
+.Loading img{
+    position:absolute;
+    left:50%;
+    transform : translateX(-50%);
+}
+.featured__list {
+    display: flex;
+}
+.featured__room img{
+    width:100%;
+    height:auto;
+}
+.featured__room{
+    padding:0px 10px;
+    position: relative;
+}
+
+.featured__room {}
+
+.featured__room-price-top {
+    position: absolute;
+    top: 0;
+    background: #131107;
+    color: white;
+    padding: 13px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.featured__room-btn {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%);
+    opacity:0;
+}
+.featured__room img{
+    filter: brightness(.8);
+
+}
+.featured__room:hover .featured__room-btn {
+    opacity:1;
+    color:#f7f7f7;
+}
+.featured__room:hover .featured__room {
+opacity:.2;
+}
+p.featured__room-name {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    display: block;
+    width: 93%;
+    text-align: center;
+    padding: 10px 0px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.featured__room:hover img {
+    filter: brightness(0.5);
 }

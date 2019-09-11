@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Hero({children, hero}) {
     return (
-       <head className = {hero}> 
+       <div className = {hero}> 
         {children}
-       </head>
+       </div>
     )
 }
 Hero.defaultProps =  {
