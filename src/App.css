@@ -284,3 +284,21 @@ p.featured__room-name {
 .featured__room:hover img {
     filter: brightness(0.5);
 }
+.error {
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+
+.error h3 {
+    text-align: center;
+}
+
+.error a.btn-primary {
+    margin: 0 auto;
+    display: block;
+    width: 10%;
+    text-align: center;
+    color: #fff;
+    margin-top: 13px;
+}
