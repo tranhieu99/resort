@@ -332,3 +332,8 @@ section.single-room-extras ul {
 section.single-room-extras {
     padding-bottom:40px;
 }
+section.sorted-room-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-row-gap: 20px;
+}

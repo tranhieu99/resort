@@ -1,20 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 
+import Loading from '../components/Loading'
 import RoomFilter from './RoomFilter'
 import RoomList from './RoomList'
 import {WithRoomConsumer} from '../context'
 
-class RoomContainer extends Component {
-    render() {
-        console.log(value)
-        return (
+function RoomContainer({context}) {
+    const {loading, sortedRooms, rooms} = context;
+    if(loading){
+     return <Loading />
+    }
+    return (
             <>
-                
-                <RoomFilter/>
-                <RoomList/>
+                <RoomFilter rooms = {rooms}/>
+                <RoomList rooms = {sortedRooms}/>
             </>
         )
-    }
 }
 
 export default WithRoomConsumer(RoomContainer)
