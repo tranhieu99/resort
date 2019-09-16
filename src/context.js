@@ -51,3 +51,13 @@ const roomConsumer = roomContext.Consumer;
 export {
     RoomProvider, roomContext, roomConsumer
 };
+
+export function WithRoomConsumer(WrappedComponent){
+    return function(props){
+        <RoomProvider>
+        <roomConsumer>
+            {(value) => <WrappedComponent  {...props} value = {value} /> } 
+        </roomConsumer>
+        </RoomProvider>
+    }
+}
