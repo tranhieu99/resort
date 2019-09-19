@@ -6,18 +6,31 @@ class RoomProvider extends Component {
         rooms: [],
         sortedRooms: [],
         featuredRooms: [],
-        loading: true
+        loading: true,
+        price: 0,
+        maxPrice:0,
+        size:0,
+        maxSize:0,
+        type: 'all',
+        capacity: 1,
+        breakfast: false,
+        pets: false
     }
     componentDidMount(){
         let rooms = this.formatData(items)
         let featuredRooms = rooms.filter(room =>{
            return room.featured === true
         })
+        const maxPrice = Math.max(...rooms.map(item => item.price))
+        const maxSize = Math.max(...rooms.map(item => item.size))
         this.setState({
             rooms,
             sortedRooms: rooms,
             featuredRooms,
-            loading: false
+            loading: false,
+            price: maxPrice,
+            maxPrice,
+            maxSize
         })
     }
     formatData = (items) => {
@@ -36,10 +49,17 @@ class RoomProvider extends Component {
         const roomSlug = rooms.find(room => room.slug === slug)
         return roomSlug
     }
+    handleChange = event =>{
+        const type = event.target.type
+        const name = event.target.name
+        const value = event.target.value
+        console.log(type,name,value)
+
+    }
     render() {
         return (
             <div>
-                <roomContext.Provider value = {{...this.state, getRoom: this.getRoom}}>
+                <roomContext.Provider value = {{...this.state, getRoom: this.getRoom, handleChange: this.handleChange}}>
                     {this.props.children}
                 </roomContext.Provider>
             </div>

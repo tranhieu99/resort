@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-
-export default class RoomFilter extends Component {
-    render() {
+import React, { Component, useContext } from 'react'
+import {roomContext} from '../context'
+export default function RoomFilter() {
+        const context = useContext(roomContext)
+        console.log(context)
         return (
             <div>
                 Hello from room filter
             </div>
         )
-    }
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function Room({room}) {
 const {name, price, images, slug } = room
-const roomLink = `rooms/${slug}`
+const roomLink = `/rooms/${slug}`
     return (
         <div className = "featured__room">
             <img src = {images[0]} alt = {name} />
