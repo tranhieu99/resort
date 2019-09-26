@@ -16,6 +16,7 @@ class RoomProvider extends Component {
         breakfast: false,
         pets: false
     }
+    
     componentDidMount(){
         let rooms = this.formatData(items)
         let featuredRooms = rooms.filter(room =>{
@@ -23,6 +24,7 @@ class RoomProvider extends Component {
         })
         const maxPrice = Math.max(...rooms.map(item => item.price))
         const maxSize = Math.max(...rooms.map(item => item.size))
+
         this.setState({
             rooms,
             sortedRooms: rooms,
@@ -33,6 +35,7 @@ class RoomProvider extends Component {
             maxSize
         })
     }
+
     formatData = (items) => {
         const tempItems = items.map(item =>{
             const id = item.sys.id
@@ -44,6 +47,7 @@ class RoomProvider extends Component {
         })
         return tempItems
     }
+
     getRoom = (slug) => {
         const rooms = [...this.state.rooms]
         const roomSlug = rooms.find(room => room.slug === slug)
@@ -51,11 +55,48 @@ class RoomProvider extends Component {
     }
     handleChange = event =>{
         const type = event.target.type
-        const name = event.target.name
-        const value = event.target.value
-        console.log(type,name,value)
-
+        const inputName = event.target.name
+        const value = type === 'checkbox' ? event.target.checked : event.target.value
+        this.setState({
+            [inputName]: value
+        }, this.filterRoom )
     }
+
+    filterRoom = () =>{
+        const {
+            rooms,
+            price,
+            maxPrice,
+            size,
+            maxSize,
+            type,
+            capacity,
+            breakfast,
+            pets
+        } = this.state
+        // Get all rooms
+        let tempRooms =[...rooms]
+        // Filter by type
+        if(type !== 'all' ){
+            tempRooms = [...tempRooms.filter(item => item.type == type )];
+        }
+        // Filter by capacity
+        if(capacity !== 1){
+            tempRooms = [...tempRooms.filter(item => item.capacity == capacity )];
+        }
+        // Filter by price
+        if(price !== maxPrice){
+            tempRooms = [...tempRooms.filter(item => item.price <= price )];
+        }
+        if(size && maxSize){
+            tempRooms = [...tempRooms.filter(item => item.size >= size && item.size <= maxSize )];
+
+        }
+        this.setState({
+            sortedRooms: tempRooms
+        })
+    }
+
     render() {
         return (
             <div>

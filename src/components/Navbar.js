@@ -8,7 +8,6 @@ import classNames from 'classnames'
 export default function Navbar(props) {
     const [isOpen,setIsOpen] = useState(false)
    function onHumburgerClick(){
-       console.log(isOpen)
         setIsOpen(!isOpen);
     }
     return (

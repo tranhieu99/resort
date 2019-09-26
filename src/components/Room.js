@@ -14,7 +14,6 @@ const roomLink = `/rooms/${slug}`
         </div>
     )
 }
-
 Room.propTypes = {
     name: PropTypes.string,
     slug: PropTypes.string,

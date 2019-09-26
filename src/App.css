@@ -337,3 +337,10 @@ section.sorted-room-section {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-row-gap: 20px;
 }
+form.filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.form-group input{
+    width:50%;
+}
